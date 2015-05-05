@@ -25,14 +25,14 @@ function iconfont(processContext, done) {
 
     var fontName = this.fontName;
 
-    // fix ext 
+    // fix ext
     // @todo fix in fontmin
     if (!/\.ttf$/.test(fontName)) {
-        fontName += '.ttf';   
+        fontName += '.ttf';
     }
 
     var fontmin = new Fontmin()
-        .src(this.files, { base: processContext.baseDir })
+        .src(this.files, {base: processContext.baseDir})
         .use(Fontmin.svgs2ttf(fontName))
         .use(Fontmin.ttf2eot())
         .use(Fontmin.ttf2woff())
