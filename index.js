@@ -17,30 +17,18 @@ var path = require('path');
  */
 function iconfont(processContext, done) {
 
-    var outputDir = processContext.outputDir;
-
-    if (this.dest) {
-        outputDir = path.resolve(processContext.outputDir, this.dest);
-    }
-
-    var fontName = this.fontName;
-
-    // fix ext
-    // @todo fix in fontmin
-    if (!/\.ttf$/.test(fontName)) {
-        fontName += '.ttf';
-    }
+    var destDir = path.resolve(processContext.baseDir, this.dest);
 
     var fontmin = new Fontmin()
         .src(this.files, {base: processContext.baseDir})
-        .use(Fontmin.svgs2ttf(fontName))
+        .use(Fontmin.svgs2ttf(this.fontName))
         .use(Fontmin.ttf2eot())
         .use(Fontmin.ttf2woff())
         .use(Fontmin.ttf2svg())
         .use(Fontmin.css({
             glyph: true
         }))
-        .dest(outputDir);
+        .dest(destDir);
 
     var me = this;
 
@@ -61,6 +49,7 @@ function iconfont(processContext, done) {
 var iconProcessor = {
     files: ['*.svg'],
     fontName: 'iconfont',
+    dest: 'font',
     name: 'IconProcessor',
     start: iconfont
 };

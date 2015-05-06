@@ -12,13 +12,13 @@ var IconProcessor = require('edp-build-iconfont');
 exports.getProcessors = function () {
 
     var iconProcessor = new IconProcessor({
-        files: 'src/svg/*.svg',				// svg 文件
-        fontName: 'font-food',			    // 字体名称
-        dest: 'asset/font' 			        // 字体文件路径
+        files: 'src/svg/*.svg',             // svg 文件
+        fontName: 'font-food',              // 字体名称
+        dest: 'src/font'                    // 字体文件路径
     });
 
     return {
-        'default': [iconProcessor]
+        'iconfont': [iconProcessor]
     };
 
 });
