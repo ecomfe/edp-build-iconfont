@@ -1,6 +1,6 @@
 # edp-build-iconfont
 
-> edp-build iconfont with fontmin
+> edp-build iconfont with fontmin, generate [iconfont](https://github.com/showcases/icon-fonts) from svgs.
 
 ## Usage
 
@@ -26,6 +26,7 @@ exports.getProcessors = function () {
 
 ## Related
 
+- [edp-build-iconfont-demo](https://github.com/junmer/edp-build-iconfont-demo)
 - [fontmin](https://github.com/ecomfe/fontmin)
 - [edp-build-fontmin](https://github.com/ecomfe/edp-build-fontmin)
 
