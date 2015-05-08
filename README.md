@@ -27,7 +27,7 @@ exports.getProcessors = function () {
 ## Related
 
 - [edp-build-iconfont-demo](https://github.com/junmer/edp-build-iconfont-demo)
-- [fontmin](https://github.com/ecomfe/fontmin)
 - [edp-build-fontmin](https://github.com/ecomfe/edp-build-fontmin)
+- [fontmin](https://github.com/ecomfe/fontmin)
 
 [![NPM](https://nodei.co/npm/edp-build-iconfont.png?downloads=true&stars=true)](https://nodei.co/npm/edp-build-iconfont/)
