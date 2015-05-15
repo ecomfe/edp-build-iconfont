@@ -18,16 +18,16 @@ var path = require('path');
 function iconfont(processContext, done) {
 
     var destDir = path.resolve(processContext.baseDir, this.dest);
+    
+    var options = extend({glyph: true}, this.fmOptions);
 
     var fontmin = new Fontmin()
         .src(this.files, {base: processContext.baseDir})
-        .use(Fontmin.svgs2ttf(this.fontName))
-        .use(Fontmin.ttf2eot())
-        .use(Fontmin.ttf2woff())
-        .use(Fontmin.ttf2svg())
-        .use(Fontmin.css({
-            glyph: true
-        }))
+        .use(Fontmin.svgs2ttf(this.fontName, options))
+        .use(Fontmin.ttf2eot(options))
+        .use(Fontmin.ttf2woff(options))
+        .use(Fontmin.ttf2svg(options))
+        .use(Fontmin.css(options))
         .dest(destDir);
 
     var me = this;
@@ -59,8 +59,9 @@ var iconProcessor = {
  *
  * @param {Object} opt 配置
  * @param {Array} opt.files svg 文件
- * @param {Array} opt.fontName 字体名称
+ * @param {String} opt.fontName 字体名称
  * @param {Array} opt.dest 字体文件路径
+ * @param {Object=} opt.fmOptions fontmin 配置
  * @return {Object} IconProcessor instance
  */
 function IconProcessor(opt) {
