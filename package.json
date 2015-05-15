@@ -1,6 +1,6 @@
 {
   "name": "edp-build-iconfont",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "edp-build iconfont with fontmin, generate iconfont from svgs.",
   "main": "index.js",
   "repository": {

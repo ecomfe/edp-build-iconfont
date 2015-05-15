@@ -12,15 +12,33 @@ var IconProcessor = require('edp-build-iconfont');
 exports.getProcessors = function () {
 
     var iconProcessor = new IconProcessor({
-        files: 'src/svg/*.svg',             // svg 文件
-        fontName: 'font-food',              // 字体名称
-        dest: 'src/font'                    // 字体文件路径
+        files: 'src/svg/*.svg',             // svg path
+        fontName: 'font-food',              // font name
+        dest: 'src/font'                    // dest path
     });
 
     return {
         'iconfont': [iconProcessor]
     };
 
+});
+```
+
+## Options
+
+config `fmOptions` as [fontmin](https://github.com/ecomfe/fontmin) options
+
+```
+var iconProcessor = new IconProcessor({
+    fmOptions: {
+        adjust: {
+            leftSideBearing: 0,
+            rightSideBearing: 0,
+            ajdustToEmBox: true,
+            ajdustToEmPadding: 0
+        },
+        startCode: 0xe001
+    }
 });
 ```
 
